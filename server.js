@@ -81,14 +81,10 @@ app.get("/customers/:customersId", function (req, res) {
   });
 });
 
-//Add a new POST endpoint /customers/:customerId/orders to create a new order 
-//(including an order date, and an order reference) for a customer.
-//Check that the customerId corresponds to an existing customer or return an error.
-
 app.get("/suppliers", (req, res) => {
-   pool.query("select * from suppliers", (error, result) => {
-     res.json(result.rows);
-   });
+  pool.query("select * from suppliers", (error, result) => {
+    res.json(result.rows);
+  });
 });
 
 const findSuppliersById = "select * from customers where id = $1";
